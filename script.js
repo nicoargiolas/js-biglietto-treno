@@ -7,8 +7,34 @@
 
 // Chiedere all'utente km e età
 
-// Calcolare prezzo biglietto (km*eta)
+let km = parseInt(prompt("Inserisci il numero di km da percorrere"));
+let eta = parseInt(prompt("Inserisci la tua età"));
+
+console.log(km, eta);
+
+// Calcolare prezzo biglietto (km*0.21)
+
+let prezzo = km*0.21;
+
+console.log(prezzo);
 
 // Applicare sconto
 
+let prezzoscontato;
+
+if (eta<18) {
+    prezzoscontato = prezzo - (prezzo*0.2);
+} else if (eta>65) {
+    prezzoscontato = prezzo - (prezzo*0.4);
+} else {
+    prezzoscontato = prezzo;
+}
+
 // Dare in output il prezzo del biglietto
+
+console.log(prezzoscontato);
+
+console.log(`Il prezzo del biglietto è di ${prezzoscontato.toFixed(2)}€`);
+
+alert(`Il prezzo del biglietto è di ${prezzoscontato.toFixed(2)}€`);
+

@@ -10,13 +10,15 @@
 let km = parseInt(prompt("Inserisci il numero di km da percorrere"));
 let eta = parseInt(prompt("Inserisci la tua età"));
 
-console.log(km, eta);
+console.log(`L'utente deve percorrere ${km} km e ha ${eta} anni`);
+
 
 // Calcolare prezzo biglietto (km*0.21)
 
 let prezzo = km*0.21;
 
-console.log(prezzo);
+console.log(`Il prezzo senza sconto è di ${prezzo.toFixed(2)}€`);
+
 
 // Dichiarazione variabile prezzo scontato
 
@@ -30,18 +32,20 @@ if (isNaN(km)||isNaN(eta)) {
     // Applicare sconto
     if (eta<18) {
         prezzoscontato = prezzo - (prezzo*0.2);
+        console.log("Viene applicato uno sconto del 20%");
     } else if (eta>65) {
         prezzoscontato = prezzo - (prezzo*0.4);
+        console.log("Viene applicato uno sconto del 40%");
     } else {
         prezzoscontato = prezzo;
+        console.log("Non viene applicato nessuno sconto");
     }
 }
 
+
 // Dare in output il prezzo del biglietto
 
-console.log(prezzoscontato);
-
 if (isNaN(prezzoscontato)) {} else {
-    console.log(`Il prezzo del biglietto è di ${prezzoscontato.toFixed(2)}€`);
+    console.log(`Il prezzo del biglietto dopo lo sconto è di ${prezzoscontato.toFixed(2)}€`);
     alert(`Il prezzo del biglietto è di ${prezzoscontato.toFixed(2)}€`);
 }

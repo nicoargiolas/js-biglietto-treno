@@ -18,23 +18,30 @@ let prezzo = km*0.21;
 
 console.log(prezzo);
 
-// Applicare sconto
+// Dichiarazione variabile prezzo scontato
 
 let prezzoscontato;
 
-if (eta<18) {
-    prezzoscontato = prezzo - (prezzo*0.2);
-} else if (eta>65) {
-    prezzoscontato = prezzo - (prezzo*0.4);
+// Controllo dati inseriti
+
+if (isNaN(km)||isNaN(eta)) {
+    alert ("Hai inserito dati sbagliati");
 } else {
-    prezzoscontato = prezzo;
+    // Applicare sconto
+    if (eta<18) {
+        prezzoscontato = prezzo - (prezzo*0.2);
+    } else if (eta>65) {
+        prezzoscontato = prezzo - (prezzo*0.4);
+    } else {
+        prezzoscontato = prezzo;
+    }
 }
 
 // Dare in output il prezzo del biglietto
 
 console.log(prezzoscontato);
 
-console.log(`Il prezzo del biglietto è di ${prezzoscontato.toFixed(2)}€`);
-
-alert(`Il prezzo del biglietto è di ${prezzoscontato.toFixed(2)}€`);
-
+if (isNaN(prezzoscontato)) {} else {
+    console.log(`Il prezzo del biglietto è di ${prezzoscontato.toFixed(2)}€`);
+    alert(`Il prezzo del biglietto è di ${prezzoscontato.toFixed(2)}€`);
+}
